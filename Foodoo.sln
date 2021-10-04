@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Foodoo", "Foodoo\Foodoo.csproj", "{2C242DDB-C3E6-4733-B357-E8E2FCD1F281}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Foodoo.Data", "..\Foodoo.Data\Foodoo.Data\Foodoo.Data.csproj", "{33446C1D-A042-45FF-8428-8FCD889CAF03}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Foodoo.Models", "..\Foodoo.Models\Foodoo.Models\Foodoo.Models.csproj", "{5BB38FD4-0332-41DF-A78A-06D0CCC374EF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2C242DDB-C3E6-4733-B357-E8E2FCD1F281}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2C242DDB-C3E6-4733-B357-E8E2FCD1F281}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2C242DDB-C3E6-4733-B357-E8E2FCD1F281}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2C242DDB-C3E6-4733-B357-E8E2FCD1F281}.Release|Any CPU.Build.0 = Release|Any CPU
+		{33446C1D-A042-45FF-8428-8FCD889CAF03}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{33446C1D-A042-45FF-8428-8FCD889CAF03}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{33446C1D-A042-45FF-8428-8FCD889CAF03}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{33446C1D-A042-45FF-8428-8FCD889CAF03}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5BB38FD4-0332-41DF-A78A-06D0CCC374EF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5BB38FD4-0332-41DF-A78A-06D0CCC374EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5BB38FD4-0332-41DF-A78A-06D0CCC374EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5BB38FD4-0332-41DF-A78A-06D0CCC374EF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
