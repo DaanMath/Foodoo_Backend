@@ -52,7 +52,9 @@ namespace Foodoo
             using (IServiceScope scope = app.ApplicationServices.CreateScope())
             using (var context = scope.ServiceProvider.GetService<FoodooContext>()) 
                 context.Database.EnsureCreated();
-            
+  
+            app.UseStaticFiles();  
+  
             app.UseCors(x => x.AllowAnyMethod().AllowAnyHeader().SetIsOriginAllowed(origin => true).AllowCredentials());
             
             app.UseHttpsRedirection();
@@ -63,7 +65,14 @@ namespace Foodoo
             
             app.UseAuthorization();
 
-            app.UseEndpoints(endpoints => { endpoints.MapControllers(); });
+            app.UseEndpoints(endpoints =>
+            {
+                endpoints.MapControllers();
+                endpoints.MapControllerRoute(  
+                    name:"default",  
+                    pattern:"{controller=recipe}/{action=index}/{id?}"  
+                );  
+            });
         }
     }
 }

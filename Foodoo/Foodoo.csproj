@@ -16,6 +16,11 @@
     <ItemGroup>
       <ProjectReference Include="..\..\Foodoo.Data\Foodoo.Data\Foodoo.Data.csproj" />
       <ProjectReference Include="..\..\Foodoo.Models\Foodoo.Models\Foodoo.Models.csproj" />
+      <ProjectReference Include="..\Foodoo.Logic\Foodoo.Logic.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Folder Include="wwwroot" />
     </ItemGroup>
 
 </Project>
