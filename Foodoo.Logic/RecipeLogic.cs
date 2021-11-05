@@ -31,20 +31,7 @@ namespace Foodoo.Logic
                 uploadedFile.CopyTo(stream);
             }
         }
-
-        private IFormFile GetRecipeImage(string imageName, string _path)
-        {
-            var path = Path.Combine(_path, "Uploads", imageName);
-            using (var stream = File.OpenRead(path))
-            {
-                IFormFile file = new FormFile(stream, 0, stream.Length, imageName, Path.GetFileName(stream.Name))
-                {
-                    Headers = new HeaderDictionary(),
-                    ContentType = "image/jpeg"
-                };
-                return file;
-            }
-        }
+        
         public void AddNewRecipe(ApiRecipeUpload upload, IFormFile image, string webRootPath)
         {
             SaveFile(image, webRootPath);
@@ -58,9 +45,16 @@ namespace Foodoo.Logic
                 Preparation = upload.Preparation
             });
         }
-        public List<ApiCardRecipe> GetCardRecipes(string _path)
+        
+        public List<ApiRecipeUpload> GetRecipes()
         {
-            return _recipeData.GetAll().Select(model => new ApiCardRecipe() {Description = model.Description, Name = model.Name, Image = GetRecipeImage(model.Image, _path)}).ToList();
+            return _recipeData.GetAll().Select(model => new ApiRecipeUpload() {Name = model.Name, Carbs = model.Carbs, Description = model.Description, Image = model.Image, Ingredients = model.Ingredients, Preparation = model.Preparation, Id = model.Id}).ToList();
         }
+
+        public RecipeModel GetRecipeById(string id)
+        {
+            return _recipeData.GetRecipeById(id);
+        }
+
     }
 }

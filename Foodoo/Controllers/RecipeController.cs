@@ -27,11 +27,11 @@ namespace Foodoo.Controllers
             context = _context;
             environment = _environment;
         }
-
+        
         [HttpGet]
-        public List<ApiCardRecipe> GetRecipes()
+        public List<ApiRecipeUpload> GetPageRecipes()
         {
-            return new RecipeLogic(context).GetCardRecipes(environment.WebRootPath);
+            return new RecipeLogic(context).GetRecipes();
         }
 
         [HttpPost("/recipe")]
@@ -48,6 +48,12 @@ namespace Foodoo.Controllers
                 Preparation = collection["preparation"]
             };
             new RecipeLogic(context).AddNewRecipe(model, image, environment.WebRootPath);
+        }
+
+        [HttpGet("/recipe/{id}")]
+        public RecipeModel GetRecipeById(string id)
+        {
+            return new RecipeLogic(context).GetRecipeById(id);
         }
     }
     
